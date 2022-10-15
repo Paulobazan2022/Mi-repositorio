@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+         /*let calc = document.getElementById("calculo")
+         calc.onclick = conversion; */
+            
+        function conversion() {
+            let grades = document.getElementById("gradosC").value;
+            let kelvins = document.getElementById("gradosF").value;
+            if ((grades == "") && (kelvins  == "")) {
+                alert("No valido, introducir datos")
+                return false;
+            }
+            if ( grades!="" && kelvins != ""){
+                alert("No es validdo con dos valores")
+                return false;
+            }
+            if (grades!="" && kelvins == ""){
+                document.getElementById("gradosF").value = parseFloat(grades) + 273.15
+                
+            }
+            if (grades=="" && kelvins != ""){
+                document.getElementById("gradosC").value = (parseFloat(kelvins) -273.15).toFixed(2)
+               
+            }
+        
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="color:blue; font-family: verdana">Calculo de los grados</h1>
+
+    <p>Introducir grados Centigrados</p><input id="gradosC" type="number" />
+    <p>Introducir grados Kelvin</p><input id="gradosF" type="number" />
+    </br>
+
+    <button id="calculo" value="Calcular" onclick="conversion()" >Calcular</button>
+</body>
